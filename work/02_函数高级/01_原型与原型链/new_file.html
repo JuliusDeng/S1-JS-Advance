@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function CreateJsPerson(name,age) {
+						this.name = name;
+						this.age = age;
+						this.writeJs = function() {
+								console.log("my name is " + this.name + ",i can write js la");
+						}
+				}
+				//不用再定义obj 也不用再return obj
+				var p2 = new CreateJsPerson("A",18);// CreateJsPerson就是类
+				p2.writeJs();
+				console.log(typeof CreateJsPerson); // function
+				console.log(typeof p2);   // object 对象才能用obj.xxx啊
+		</script>
+	</body>
+</html>

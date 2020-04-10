@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			
+			// 将时间戳转换成日期格式 yyyy-MM-dd hh:mm:ss
+			var date = new Date(1398250549490);
+			Y = date.getFullYear() + '-';
+			M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+			D = date.getDate() + ' ';
+			h = date.getHours() + ':';
+			m = date.getMinutes() + ':';
+			s = date.getSeconds(); 
+			console.log(Y+M+D+h+m+s); // 输出结果：2014-04-23 18:55:49
+			
+			
+			
+			
+		</script>
+	</body>
+</html>
