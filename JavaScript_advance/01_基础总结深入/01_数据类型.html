@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_数据类型</title>
+</head>
+<body>
+<!--
+1. 分类
+	string 
+	number
+	boolean
+	null 
+	undefined
+	Object(array function)
+2. 判断
+	(1)typeof(注：typeof返回的值都是小写的数据类型的字符串表达，如'object而不是Object')
+	其实就是判断参数是什么类型的实例，就一个参数，用例：typeof A
+	返回值(只能是这6个)：string/number/boolean/undefined/object/function
+	:能判断
+	-string/number/boolean/undefined/object/function
+	:不能判断
+	-null与object array与object（null、array返回的都是object，所以无法对它们进行判断）
+	
+	(2)instanceof 
+	是用来判断 A 是否为 B 的实例，表达式为：A instanceof B，如果 A 是 B 的实例，则返回 true,否则返回 false。
+	当 A 的 __proto__ 指向 B 的 prototype 时，就认为 A 就是 B 的实例。
+	instanceof 只能用来判断两个对象是否属于实例关系， 而不能判断一个对象实例具体属于哪种类型。
+	JS 中万物皆对象的思想（function array 也是object）
+	: 判断对象的具体类型 （是对象 数组 还是函数）返回的值是大写的--Object、Array、Function
+	
+	(3)===
+	:只能用来判断null 和 undefined（因为它们两个都只有一个值）
+-->
+
+<script type="text/javascript">
+	var a // 5.undefined
+	console.log(a, typeof a, typeof a === 'undefined', a === undefined) // undefined 'undefined' true true
+	a = 'yuchen' // 1.string
+	console.log(typeof a, typeof a === 'string')  // string true
+	a = 4  // 2.number
+	console.log(typeof a, typeof a === 'number', a === Number) // number true false
+	a = true  // 3.boolean
+	console.log(typeof a, typeof a === 'boolean')
+	a = null  // 4. null
+	console.log(typeof a, 'null返回object，无法判断', typeof a === 'object', a === null)  // object true true
+	a = {name: 'yuchen'} // 6.object
+	console.log(typeof a, 'object对象')
+	a = function () {		// 7.function
+		return '嗯 黎海霞'
+	}
+	console.log(typeof a, 'function返回')
+	a = [1,2,3]
+	console.log(typeof a, 'array返回object，无法判断')
+	
+	// 对象
+	var b1 = {
+		b2: [1, 'abc', console.log],
+		b3: function () {
+			console.log('b3')
+			return function () {
+				return 'yuchen'
+			}
+		},
+		b4: 11
+	}
+	console.log('以下为对象了----')
+	console.log(b1 instanceof Object, )
+	console.log(b1.b2 instanceof Array, b1.b2 instanceof Object)
+	console.log(b1.b3 instanceof Function,)
+	
+	// 扩展
+	// Question: 如何判断一个变量是否为数组？,
+			// 不要用 typeof 判断
+			typeof []; // object
+			
+			// 这是es3的规定，但是这必须假定只有一个全局执行环境
+			[] instanceof Array; // true
+			
+			// ES5的标准
+			Array.isArray([]); // true
+	
+	// Answer: 通过 instanceof 判断，或者 isArray 来判断。
+	
+</script>
+</body>
+</html>

@@ -12,10 +12,10 @@
 -->
 <script type="text/javascript">
   var a = 3
-  function fn (a) {
-    a = a +1
+  function fn (b) {  // function fn (a)-->这里有一步隐含的赋值操作：b = a
+    b = b +1
   }
-  fn(a)
+  fn(a)		// 对内存的两个操作：读内存和写内存  只有一种情况是“写”，就是被赋值时是“写”，即在 = 的左边 eg：b = b +1
   console.log(a)
 
   function fn2 (obj) {
