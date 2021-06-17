@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>01_数据类型</title>
+	</head>
+	<body>
+		<h3>01_数据类型</h3>
+		<!-- 01_数据类型 -->
+		<script type="text/javascript">
+			/*
+			 (1)typeof(注：typeof返回的值都是 小写 的数据类型的 字符串 表达，如'object而不是Object')
+			 其实就是判断参数是什么类型的实例，就一个参数，用例：typeof A
+			 返回值(只能是这6个)：string/number/boolean/undefined/object/function
+			 :能判断
+			 -string/number/boolean/undefined/object/function
+			 :不能判断
+			 -null与object array与object（null、array返回的都是object，所以无法对它们进行判断）
+			 */
+			var a 
+			console.log(a, typeof a, typeof a === 'undefined', a === undefined);
+			// console.log(undefined === 'undefined');
+			a = 4;
+			console.log(a, typeof a === 'number');
+			a = 'hello'
+			console.log(a, typeof a === 'string');
+			a = false;
+			console.log(a, typeof a === 'boolean');
+			a = null;
+			console.log(a, typeof a === 'null', typeof a === 'object');
+			a = {
+				arr: [0],
+				fun: function() {
+					return 'function world!'
+				}
+			}
+			console.log(a, typeof a === 'object');
+			console.log(a.arr, typeof a.arr === 'object');
+			console.log(a.arr, a.arr instanceof Array,);
+			console.log(a.fun, a.fun instanceof Function,);
+			
+			/* 
+			 (2)instanceof
+			 是用来判断 A 是否为 B 的实例，表达式为：A instanceof B，如果 A 是 B 的实例，则返回 true,否则返回 false。
+			 当 A 的 __proto__ 指向 B 的 prototype 时，就认为 A 就是 B 的实例。
+			 instanceof 只能用来判断两个对象是否属于实例关系， 而不能判断一个对象实例具体属于哪种类型。
+			 JS 中万物皆对象的思想（function array 也是object）
+			 : 判断对象的具体类型 （是对象 数组 还是函数）返回的值是大写的--Object、Array、Function
+			 */
+			var a = {
+				arr: [0],
+				fun: function() {
+					return 'function world!'
+				}
+			}
+			console.log(a, typeof a === 'object');
+			console.log(a.arr, typeof a.arr === 'object');
+			console.log(a.arr, a.arr instanceof Array,);
+			console.log(a.fun, a.fun instanceof Function,);
+			console.log(a, a instanceof Function,);
+			console.log(a, a instanceof Object,);
+			
+			/* 
+			 (3)===
+			 :只能用来判断null 和 undefined（因为它们两个都只有一个值）
+			 */
+			var x = null;
+			console.log(x, x === null);
+			x = undefined
+			console.log(x, x === undefined);
+			
+			// Q: 如何判读一个变量是否为数组？
+			// A: (1) typeof 是不能用来判断数组的，因为它会返回object
+			eg:	var b = []
+					console.log(typeof b === 'array', typeof b === 'object');
+			// A: (2) 可以用 isArray (ES5的标准)判断
+			eg: console.log('isArray判断：', Array.isArray(b));
+			// A: (3) 可以用 instanceof (ES5的标准)判断
+			eg: console.log('instanceof判断：', b instanceof Array);
+		</script>
+	</body>
+</html>

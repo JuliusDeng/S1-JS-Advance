@@ -24,7 +24,26 @@
 -->
 
 <script type="text/javascript">
-
+	function Boys(h) {
+		this.height = h;
+		console.log(11, this);
+	}
+	Boys(66)
+	var boy = new Boys(99)
+	// console.log(boy);
+	var girl = new Boys(9999)
+	// console.log(girl);
+	
+	// undefined 与 null 的区别
+	var a;
+	console.log('undefined:', a);
+	a = null;
+	console.log('null:', a);
+	
+	// null 的用处：初始化赋值，将要赋值为对象
+	var b = null;
+	b = [11]
+	b = null
 </script>
 </body>
 </html>
