@@ -12,7 +12,23 @@
 4. 如何访问对象内部数据?
 -->
 <script type="text/javascript">
-
+	var p = {
+		name: 'tom',
+		age: 11,
+		setName: function(name) {
+			this.name = name;
+		},
+		setAge: function(age) {
+			this.age = age;
+		}
+	}
+	
+	p.setName('bob')
+	p['setAge'](16)
+	console.log(p.name, p['age']);
+	
+	
+	
 </script>
 </body>
 </html>

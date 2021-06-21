@@ -13,7 +13,21 @@
   * 作用: 函数的所有实例对象自动拥有原型中的属性(方法)
 -->
 <script type="text/javascript">
-
+	// console.log(Date.prototype, typeof Date.prototype);
+	function Fun() {
+		
+	}
+	// console.log(Fun.prototype);
+	// console.log(Date.prototype.constructor === Date);
+	// console.log(Fun.prototype.constructor === Fun);
+	
+	Fun.prototype.test = function() {
+		console.log('prototype 中的 test()');
+	}
+	var fun = new Fun()
+	fun.test()
+	console.log( fun.test);
+	
 </script>
 </body>
 </html>

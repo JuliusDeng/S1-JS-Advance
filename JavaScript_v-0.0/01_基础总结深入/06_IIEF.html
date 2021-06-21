@@ -11,6 +11,29 @@
 2. 作用
 -->
 <script type="text/javascript">
+	(function() {
+		var a = 3
+		console.log(a + 3);
+	}
+	)()
+	
+	var a = 4
+	// console.log(a);
+	
+	;(function() {
+		var a = 1;
+		function test() {
+			console.log(++a);
+		}
+		window.$ = function() {
+			return {
+				test: test
+			}
+		}
+	}
+	)()
+	$().test()
+
 
 </script>
 
