@@ -14,7 +14,7 @@
   function fn1() {
     //此时闭包就已经产生了(函数提升, 内部函数对象已经创建了)
     var a = 2
-    function fn2 () {
+    function fn2 () {  // 注意另一种函数声明写法 var fn2 = function() {...}
       a++
       console.log(a)
     }
