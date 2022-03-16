@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04_函数</title>
+</head>
+<body>
+<!--
+1. 什么是函数?
+2. 为什么要用函数?
+3. 如何定义函数?
+4. 如何调用(执行)函数?
+-->
+<script type="text/javascript">
+
+
+  /*
+  编写程序实现以下功能需求:
+    1. 根据年龄输出对应的信息
+    2. 如果小于18, 输出: 未成年, 再等等!
+    3. 如果大于60, 输出: 算了吧!
+    4. 其它, 输出: 刚好!
+  */
+ 
+	// 1 函数声明方式
+	function age(y) { 
+		if(y < 18) {
+			console.log('未成年');
+		} else if(y > 60) {
+			console.log('> 60算了吧');
+		} else {
+			console.log(' 18 -- 60刚好哦');
+		}
+	}
+	age(6)
+	// 函数表达式方式
+	var fn2 = function(num) {
+		console.log(`num is ${num}`);
+	}
+	fn2(66)
+	
+	var obj = {}
+	function test2() {
+		this.a = 'deng'
+	}
+	test2.apply(obj)
+	console.log(obj);
+	
+	
+ 
+ 
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

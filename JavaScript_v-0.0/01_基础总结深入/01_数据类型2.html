@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>01_相关问题</title>
+</head>
+<body>
+<!--
+1. undefined与null的区别?
+	: unfefined是定义了没有赋值；
+		null是就给它赋值为null
+2. 什么时候给变量赋值为null呢?
+	：初始化赋值时，并且意在表明将要把它赋值为对象
+		结束前，让对象成为垃圾对象（被垃圾回收器回收，并且这可以释放内存）
+3. 严格区别变量类型与数据类型?
+	：数据类型
+		：-基本类型
+		  -对象类型
+		
+		变量类型(实际上是看变量内存值的类型--js是一门弱类型的语言)
+		：-基本类型：值的数据类型是 保存的是基本类型的数据
+		  -引用类型：............. 保存的是地址值
+	
+-->
+
+<script type="text/javascript">
+	function Boys(h) {
+		this.height = h;
+		console.log(11, this);
+	}
+	Boys(66)
+	var boy = new Boys(99)
+	// console.log(boy);
+	var girl = new Boys(9999)
+	// console.log(girl);
+	
+	// undefined 与 null 的区别
+	var a;
+	console.log('undefined:', a);
+	a = null;
+	console.log('null:', a);
+	
+	// null 的用处：初始化赋值，将要赋值为对象
+	var b = null;
+	b = [11]
+	b = null
+</script>
+</body>
+</html>
